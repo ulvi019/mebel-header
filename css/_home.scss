@@ -6,6 +6,7 @@ ul{padding: 0; margin: 0;}
     width: 100%;
     height: 5vh;
     .top-header{
+        z-index: 60;
        position: relative;
        border-bottom: 1px solid #848169;
         ul{
@@ -42,6 +43,92 @@ ul{padding: 0; margin: 0;}
             border-radius: 50%;
             background-color: red;
             color: #fff;
+        }
+    }
+
+    .bottom-header{
+      position: relative;
+      a{color: #000;}
+        ul{
+            .hover{
+                &::after{
+                    content: ' ';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 0;
+                    height: 4px;
+                    background-color: #f8c704;
+                    transition: .5s ease-in;
+                }
+                &::before{
+                    content: ' ';
+                    position: absolute;
+                    bottom: 0;
+                    right: 50%;
+                    width: 0;
+                    height: 4px;
+                    background-color: #f8c704;
+                    transition: .5s ease-in;
+                }
+                &:hover+::after{
+                   width: 50%;
+                   
+                }
+                &:hover+::before{
+                    width: 50%;
+                    
+                 }
+            }
+            li{
+                .page{
+                    &:hover+.pages-sec{
+                           
+                            opacity: 2;
+                            visibility: visible !important;
+                           
+                        
+                    }
+                }
+                .pages-sec{
+                   
+                    width: 100%;
+                    
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                   opacity: 0;
+                   visibility: hidden;
+                   transition: .5s ease-in-out;
+                    color: #fff;
+                    &:hover{opacity: 2; visibility: visible;}
+                 .boxes{
+                   
+                    width: 100%;
+                    height: 50vh !important;
+                     .box1{
+                              background-color: rgba(41, 40, 40, 0.831);
+                              height: 100%;
+                            
+                     }
+                     .box2{
+                         background-color: #f8c704;
+                         ul{
+                             li{
+                                 padding: 2px 0;
+                                 font-weight: 600;
+                                 &:hover{
+                                     color: #000;
+                                 }
+                             }
+                         }
+                     }
+
+                 }       
+
+
+                }
+            }
         }
     }
 }
